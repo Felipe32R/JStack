@@ -1,4 +1,4 @@
-#### GET, POST, PUT & DELETE methods
+#### GET, POST, PUT & DELETE methods only with NodeJS (no additional packages)
 
 
 
