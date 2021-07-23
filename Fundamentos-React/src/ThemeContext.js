@@ -4,7 +4,7 @@ import { useState, createContext } from 'react';
 export const ThemeContext = createContext('dark')
 
 
-export default function ThemeProvider(props) {
+export  function ThemeProvider(props) {
   const [theme, setTheme] = useState('dark');
 
   function handleToggleTheme(){

@@ -4,13 +4,15 @@ import Button from './Button'
 
 import { ThemeContext } from './ThemeContext'
 
+import  styles  from './Header.css'
+
 export default function Header(props) {
 
   const { onToggleTheme } = useContext(ThemeContext)
  
   return(
     <>
-      <h1>{props.title}</h1>
+      <h1 className={styles.title}>{props.title}</h1>
       <Button onClick={onToggleTheme}>
         Mudar tema
       </Button>
