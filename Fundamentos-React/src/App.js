@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState, createContext} from 'react';
 
 import { ThemeProvider } from 'styled-components'
 
@@ -7,13 +7,31 @@ import Layout from './components/Layout';
 
 import themes from './styles/themes'
 
+
+export const ThemeContext = createContext();
+
 function App() {
   const [theme, setTheme] = useState('dark');
 
+  const currentTheme = useMemo(() => {
+    return themes[theme] || themes.dark;
+  }, [theme]);
+
+  function handleToggleTheme() {
+    setTheme((prevState) => prevState === 'dark' ? 'light' : 'dark');
+  }
+
   return (
-    <ThemeProvider theme={themes.light}>
-      <GlobalStyle />
-      <Layout />
+    <ThemeProvider theme={currentTheme}> 
+      <ThemeContext.Provider 
+        value={{
+        onToggleTheme: handleToggleTheme,
+        selectedTheme: theme,
+        }}
+      >
+        <GlobalStyle />
+        <Layout />
+      </ThemeContext.Provider>
     </ThemeProvider>
   );
 };
