@@ -2,7 +2,7 @@ import React, { useMemo, useEffect, createContext} from 'react';
 
 import { ThemeProvider } from 'styled-components'
 
-import { useLocalState } from './hooks/useLocalTheme'
+import { useLocalState } from './hooks/useLocalState'
 
 import GlobalStyle from './styles/global';
 import Layout from './components/Layout';
