@@ -1,6 +1,6 @@
  
 
-Introduction into React fundamentals. You can switch the theme to dark/light clicking in the 🌞 and 🌚 emotes. I have added a custom react hook to save the selected theme on localStorage ( useLocalState).
+Introduction into React fundamentals. You can switch the theme to dark/light clicking in the 🌞 and 🌚 emotes. I have added a custom react hook to save the selected theme on localStorage (useLocalState). Babel and webpack manually configured.
 
 ![react2](https://user-images.githubusercontent.com/73653212/127726043-46b1d62a-d9af-44bb-927b-111e1e1f939d.png)
 
