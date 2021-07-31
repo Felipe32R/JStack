@@ -1,8 +1,8 @@
-import React, { useMemo, useEffect, createContext} from 'react';
+import React, { useContext } from 'react';
 
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider as StyledThemeProvider } from 'styled-components'
 
-import { useLocalState } from './hooks/useLocalState'
+import { ThemeContext } from './contexts/ThemeContext'
 
 import GlobalStyle from './styles/global';
 import Layout from './components/Layout';
@@ -10,32 +10,49 @@ import Layout from './components/Layout';
 import themes from './styles/themes'
 
 
-export const ThemeContext = createContext();
+export default function App() {
 
-function App() {
-  const [theme, setTheme] = useLocalState();
+  const {selectedTheme} = useContext(ThemeContext);
+  
+  return (
+      <StyledThemeProvider theme={themes[selectedTheme] || themes.dark}> 
+          <GlobalStyle />
+          <Layout />
+      </StyledThemeProvider>
+  );
+}
+/* export default class App extends React.Component {
+  constructor(props){
+    super(props);
 
-  const currentTheme = useMemo(() => {
-    return themes[theme] || themes.dark;
-  }, [theme]);
+    this.state= {
+      theme: 'dark';
+    };
 
-  function handleToggleTheme() {
-    setTheme((prevState) => prevState === 'dark' ? 'light' : 'dark')
+    this.handleToggleTheme = this.handleToggleTheme.bind(this);
   }
 
-  return (
-    <ThemeProvider theme={currentTheme}> 
-      <ThemeContext.Provider 
-        value={{
-        onToggleTheme: handleToggleTheme,
-        selectedTheme: theme,
-        }}
-      >
-        <GlobalStyle />
-        <Layout />
-      </ThemeContext.Provider>
-    </ThemeProvider>
-  );
-};
+  handleToggleTheme(){
+    this.setState(prevState => ({
+      theme: prevState.theme === 'dark' ? 'light' : 'dark'
+    }));
+  }
 
-export default App;
+  render() {
+    const {theme} = this.state;
+
+    return (
+      <ThemeProvider theme={themes[theme] || themes.dark}> 
+        <ThemeContext.Provider 
+          value={{
+          onToggleTheme: handleToggleTheme,
+          selectedTheme: theme,
+          }}
+        >
+          <GlobalStyle />
+          <Layout onToggleTheme={this.handleToggleTheme}/>
+        </ThemeContext.Provider>
+      </ThemeProvider>
+    );
+  }
+}; */
