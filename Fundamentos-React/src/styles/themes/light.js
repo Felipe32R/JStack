@@ -7,5 +7,4 @@ export default {
   headerBackgroundColor: '#aaa',
   footerBackgroundColor: '#aaa',
   postBackgroundColor: '#ddd',
-
 };
