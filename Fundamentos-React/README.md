@@ -4,6 +4,8 @@ Introduction into React fundamentals. You can switch the theme to dark/light cli
 
 `` yarn dev to run``
 
-![react2](https://user-images.githubusercontent.com/73653212/127726043-46b1d62a-d9af-44bb-927b-111e1e1f939d.png)
 
-![react1](https://user-images.githubusercontent.com/73653212/127725978-c8f20afa-6433-4540-8937-c5207688f1c4.png)
+
+![react1](https://user-images.githubusercontent.com/73653212/128094961-7e07fd9c-ad51-48ad-90fe-3e365bff2535.png)
+
+![react2](https://user-images.githubusercontent.com/73653212/128094971-ff8f5383-c6b5-4a8e-a7e4-5ee2b99a744f.png)
