@@ -2,7 +2,7 @@
   console.log(name);
 } */
 
-exports.printName = (name) =>{
+exports.printName = (name) => {
   console.log(name);
 }
 
