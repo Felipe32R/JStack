@@ -1,4 +1,4 @@
-import { Container, InputSearchContainer } from './styles';
+import { Container } from './styles';
 
 import logo from '../../assets/images/logo.svg';
 
@@ -7,9 +7,6 @@ export default function Header() {
     <Container>
       <img src={logo} alt="Logo" width="201" />
 
-      <InputSearchContainer>
-        <input type="text" />
-      </InputSearchContainer>
     </Container>
   );
 }
