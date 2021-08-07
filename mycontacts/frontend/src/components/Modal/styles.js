@@ -21,6 +21,31 @@ export const Container = styled.div`
   padding: 24px;
   width: 100%;
   max-width: 450px;
-  height: 200px;
-  box-shadow: -12px -12px  rgba(234,101,80,0.4);
+  box-shadow: 8px 8px 6px  RGBA(0, 0, 0, 0.3);
+
+  h1{
+    font-size: 24px;
+    color: ${({ theme, danger }) => (
+    danger ? theme.colors.danger.main : theme.colors.gray[900]
+  )};
+  }
+  p{
+    margin-top: 8px;
+  }
+`;
+
+export const Footer = styled.footer`
+  margin-top: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  .cancel-button{
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    margin-right: 16px;
+    color: ${({ theme }) => theme.colors.gray[200]};
+  }
 `;
