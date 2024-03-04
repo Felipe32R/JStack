@@ -1,29 +1,37 @@
-import { Order } from "../../types/order";
+import { Order } from "../../types/Order";
 import { OrdersBoard } from "../OrdersBoard";
 import { Container } from "./styles";
 export function Orders() {
   const orders: Order[] = [
     {
       _id: "11",
-      status: "a",
-      table: "2",
+      status: "IN_PRODUCTION",
+      table: "tb",
       products: [
         {
           _id: "22",
           quantity: 2,
-          product: { name: "a", imagePath: "a", price: 55 },
+          product: {
+            name: "a",
+            imagePath: "1708998399273-frango-catupiry.png",
+            price: 55,
+          },
         },
       ],
     },
     {
       _id: "11",
-      status: "a",
-      table: "2",
+      status: "DONE",
+      table: "tabb",
       products: [
         {
           _id: "22",
           quantity: 2,
-          product: { name: "a", imagePath: "a", price: 55 },
+          product: {
+            name: "a",
+            imagePath: "1708998399273-frango-catupiry.png",
+            price: 55,
+          },
         },
       ],
     },
