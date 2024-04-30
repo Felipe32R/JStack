@@ -15,6 +15,7 @@ export async function createProduct(req: Request, res: Response) {
     });
     res.status(201).json(product);
   } catch (err) {
+    console.log(err);
     res.sendStatus(500);
   }
 }
