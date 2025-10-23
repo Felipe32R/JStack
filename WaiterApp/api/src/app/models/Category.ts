@@ -1,4 +1,5 @@
 import { model, Schema } from 'mongoose';
+
 export const Category = model(
   'Category',
   new Schema({
@@ -6,3 +7,4 @@ export const Category = model(
     icon: { type: String, required: true },
   })
 );
+
