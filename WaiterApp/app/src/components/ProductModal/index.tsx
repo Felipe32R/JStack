@@ -18,9 +18,9 @@ type ProductModalProps = {
 
 }
 
-export function ProductModal({visible, onClose, product, onAddToCart}: ProductModalProps) {
+export function ProductModal({ visible, onClose, product, onAddToCart }: ProductModalProps) {
 
-  if(!product) {
+  if (!product) {
     return null;
   }
 
@@ -32,7 +32,7 @@ export function ProductModal({visible, onClose, product, onAddToCart}: ProductMo
 
   return (
     <Modal onRequestClose={onClose} animationType='slide' presentationStyle='pageSheet' visible={visible}>
-      <Image source={{uri: `http://192.168.2.109:3001/uploads/${product.imagePath}`}}>
+      <Image source={{ uri: `${process.env.VITE_API_URL}/uploads/${product.imagePath}` }}>
         <CloseButton onPress={onClose}>
           <Close />
         </CloseButton>
@@ -41,7 +41,7 @@ export function ProductModal({visible, onClose, product, onAddToCart}: ProductMo
       <ModalBody>
         <Header>
           <Text size={24} weight='600'>{product.name}</Text>
-          <Text style={{marginTop: 8}} color='#666'>{product.description}</Text>
+          <Text style={{ marginTop: 8 }} color='#666'>{product.description}</Text>
         </Header>
 
         {product.ingredients.length > 0 && (
@@ -49,14 +49,14 @@ export function ProductModal({visible, onClose, product, onAddToCart}: ProductMo
             <Text weight='600' color='#666'>Ingredientes</Text>
 
             <FlatList
-              style={{marginTop: 16}}
+              style={{ marginTop: 16 }}
               data={product.ingredients}
               keyExtractor={ingredient => ingredient._id}
               showsVerticalScrollIndicator={false}
-              renderItem={({item: ingredient}) => (
+              renderItem={({ item: ingredient }) => (
                 <Ingredient>
                   <Text>{ingredient.icon}</Text>
-                  <Text style={{marginLeft: 20}} size={14} color='#666'>{ingredient.name}</Text>
+                  <Text style={{ marginLeft: 20 }} size={14} color='#666'>{ingredient.name}</Text>
                 </Ingredient>
               )}
             />

@@ -13,7 +13,7 @@ const server = http.createServer(app);
 export const io = new Server(server);
 
 mongoose
-  .connect('mongodb://localhost:27017')
+  .connect(`${process.env.MONGO_DB}`)
   .then(() => console.log('⚡ Successfully connected to MongoDB!'))
   .then(() => {
 

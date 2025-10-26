@@ -19,7 +19,7 @@ type CartProps = {
   selectedTable: string;
 }
 
-export function Cart({cartItems, onAdd, onDrecement, onConfirmOrder, selectedTable}: CartProps) {
+export function Cart({ cartItems, onAdd, onDrecement, onConfirmOrder, selectedTable }: CartProps) {
 
   const [isModalVisble, setIsModalVisible] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -53,19 +53,19 @@ export function Cart({cartItems, onAdd, onDrecement, onConfirmOrder, selectedTab
   return (
     <>
 
-      <OrderConfirmedModal onOk={handleOk} visible={isModalVisble}/>
+      <OrderConfirmedModal onOk={handleOk} visible={isModalVisble} />
 
       {
         cartItems.length > 0 && (
           <FlatList
             data={cartItems}
-            style={{marginBottom: 20, maxHeight: 130}}
+            style={{ marginBottom: 20, maxHeight: 130 }}
             keyExtractor={cartItem => cartItem.product._id}
             showsVerticalScrollIndicator={false}
-            renderItem={({item: cartItem}) => (
+            renderItem={({ item: cartItem }) => (
               <Item>
                 <ProductContainer>
-                  <Image source={{uri: `http://192.168.2.109:3001/uploads/${cartItem.product.imagePath}`}}/>
+                  <Image source={{ uri: `${process.env.VITE_API_URL}/uploads/${cartItem.product.imagePath}` }} />
 
                   <QuantityContainer>
                     <Text size={14} color='#666'>{cartItem.quantity}x</Text>
@@ -73,14 +73,14 @@ export function Cart({cartItems, onAdd, onDrecement, onConfirmOrder, selectedTab
 
                   <ProductDetails>
                     <Text size={14} weight='600'>{cartItem.product.name}</Text>
-                    <Text size={14} color='#666' style={{marginTop: 4}}>{formatCurrency(cartItem.product.price)}</Text>
+                    <Text size={14} color='#666' style={{ marginTop: 4 }}>{formatCurrency(cartItem.product.price)}</Text>
                   </ProductDetails>
 
                 </ProductContainer>
 
                 <Actions>
 
-                  <TouchableOpacity onPress={() => onAdd(cartItem.product)} style={{marginRight: 24}}>
+                  <TouchableOpacity onPress={() => onAdd(cartItem.product)} style={{ marginRight: 24 }}>
                     <PlusCircle />
                   </TouchableOpacity>
 
