@@ -64,7 +64,8 @@ This project was built to **modernize restaurant service**, eliminating manual o
 | **Frontend (Dashboard)** | React, Vite, Socket.IO Client |
 | **Backend** | Node.js, Express, MongoDB, Mongoose, Socket.IO |
 | **Communication** | WebSockets (Socket.IO) |
-| **Others** | ESLint, Prettier, dotenv |
+
+
 
 
 
